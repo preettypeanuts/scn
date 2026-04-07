@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const ReusableBanner = ({
     title = "",
     description = "",
@@ -6,7 +8,9 @@ export const ReusableBanner = ({
     return (
         <section className="m-3">
             <div className="rounded-main relative overflow-hidden">
-                <img
+                <Image
+                    width={1000}
+                    height={500}
                     className="h-130 w-full object-cover object-center"
                     src={imageUrl}
                     alt="banner image"
