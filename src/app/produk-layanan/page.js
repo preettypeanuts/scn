@@ -1,5 +1,6 @@
 import { MainProductSection } from "@/components/main-product-section";
 import { ReusableBanner } from "@/components/reusable-banner";
+import { ServicesSection } from "@/components/service-section";
 
 export default function ProdukLayanan() {
     return (
@@ -10,6 +11,7 @@ export default function ProdukLayanan() {
                 description="Kenali lebih jauh tentang produk dan layanan yang kami tawarkan untuk mendukung pertumbuhan industri tebu nasional."
             />
             <MainProductSection />
+            <ServicesSection/>
         </>
     )
 }

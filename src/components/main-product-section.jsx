@@ -21,7 +21,7 @@ export const MainProductSection = () => {
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
 
-                    <div className="absolute bottom-0 left-5 flex flex-col gap-2 text-white">
+                    <div className="absolute bottom-0 left-5 flex flex-col gap-2 text-white m-5">
                         <div className="flex items-center gap-2">
                             <Sprout className="w-5 h-5" />
                             <span className="text-sm uppercase tracking-wider">
