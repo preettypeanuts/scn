@@ -2,6 +2,7 @@ import "./globals.css";
 import { Plus_Jakarta_Sans, Poppins } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const pjs = Poppins({
   subsets: ["latin"],
@@ -20,10 +21,9 @@ export default function RootLayout({ children }) {
       className={`${pjs.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider defaultTheme="light" attribute="class">
           <Navbar />
           {children}
-        </ThemeProvider>
+          <Footer />
       </body>
     </html>
   );

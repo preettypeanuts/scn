@@ -3,10 +3,10 @@
 import { useEffect, useRef } from "react";
 
 const locations = [
-    { name: "Jawa Tengah", lat: -7.150975, lng: 110.1402594, color: "#e05d44", bg: "#fff0ee", group: "Jawa" },
-    { name: "Jawa Timur", lat: -7.5360639, lng: 112.2384017, color: "#e05d44", bg: "#fff0ee", group: "Jawa" },
-    { name: "Sulawesi Selatan", lat: -3.6687994, lng: 119.9740534, color: "#7b5ea7", bg: "#f3eeff", group: "Sulawesi" },
-    { name: "Sulawesi Tenggara", lat: -4.14491, lng: 122.174605, color: "#7b5ea7", bg: "#f3eeff", group: "Sulawesi" },
+    { name: "Jawa Tengah", lat: -7.150975, lng: 110.1402594, color: "#e05d44", bg: "#fff0ee" },
+    { name: "Jawa Timur", lat: -7.5360639, lng: 112.2384017, color: "#e05d44", bg: "#fff0ee" },
+    { name: "Sulawesi Selatan", lat: -3.6687994, lng: 119.9740534, color: "#7b5ea7", bg: "#f3eeff" },
+    { name: "Sulawesi Tenggara", lat: -4.14491, lng: 122.174605, color: "#7b5ea7", bg: "#f3eeff" },
 ];
 
 const legend = [
@@ -20,13 +20,22 @@ export const OperationalMap = () => {
 
     useEffect(() => {
         if (typeof window === "undefined") return;
-        if (mapInstanceRef.current) return;
+
+        let isMounted = true;
 
         const initMap = async () => {
             const L = (await import("leaflet")).default;
             await import("leaflet/dist/leaflet.css");
 
-            if (!mapRef.current) return;
+            if (!mapRef.current || !isMounted) return;
+
+            // Jika sudah ada instance, skip init ulang
+            if (mapInstanceRef.current) return;
+
+            // Bersihkan _leaflet_id yang mungkin tertinggal di DOM
+            if (mapRef.current._leaflet_id) {
+                delete mapRef.current._leaflet_id;
+            }
 
             const map = L.map(mapRef.current, {
                 center: [-5.5, 116],
@@ -43,40 +52,34 @@ export const OperationalMap = () => {
                 { subdomains: "abcd", maxZoom: 19 }
             ).addTo(map);
 
-            L.control
-                .attribution({ prefix: false, position: "bottomright" })
-                .addAttribution('&copy; <a href="https://carto.com/">CARTO</a>')
-                .addTo(map);
-
             locations.forEach((loc) => {
                 const icon = L.divIcon({
                     className: "",
                     html: `
-            <div style="display:flex;flex-direction:column;align-items:center;">
-              <div style="
-                background:${loc.bg};
-                border:2px solid ${loc.color};
-                color:${loc.color};
-                font-size:12px;
-                font-weight:600;
-                font-family:system-ui,sans-serif;
-                white-space:nowrap;
-                padding:4px 10px;
-                border-radius:20px;
-                box-shadow:0 2px 8px rgba(0,0,0,0.15);
-                line-height:1.4;
-              ">${loc.name}</div>
-              <div style="width:2px;height:8px;background:${loc.color};"></div>
-              <div style="
-                width:10px;height:10px;
-                background:${loc.color};
-                border:2.5px solid white;
-                border-radius:50%;
-                box-shadow:0 1px 4px rgba(0,0,0,0.25);
-                margin-top:-1px;
-              "></div>
-            </div>
-          `,
+                        <div style="display:flex;flex-direction:column;align-items:center;">
+                            <div style="
+                                background:${loc.bg};
+                                border:2px solid ${loc.color};
+                                color:${loc.color};
+                                font-size:12px;
+                                font-weight:600;
+                                font-family:system-ui,sans-serif;
+                                white-space:nowrap;
+                                padding:4px 10px;
+                                border-radius:20px;
+                                box-shadow:0 2px 8px rgba(0,0,0,0.15);
+                            ">${loc.name}</div>
+                            <div style="width:2px;height:8px;background:${loc.color};"></div>
+                            <div style="
+                                width:10px;height:10px;
+                                background:${loc.color};
+                                border:2.5px solid white;
+                                border-radius:50%;
+                                box-shadow:0 1px 4px rgba(0,0,0,0.25);
+                                margin-top:-1px;
+                            "></div>
+                        </div>
+                    `,
                     iconSize: [130, 54],
                     iconAnchor: [65, 54],
                 });
@@ -88,6 +91,7 @@ export const OperationalMap = () => {
         initMap();
 
         return () => {
+            isMounted = false;
             if (mapInstanceRef.current) {
                 mapInstanceRef.current.remove();
                 mapInstanceRef.current = null;
@@ -106,17 +110,17 @@ export const OperationalMap = () => {
                 </p>
             </div>
 
-            <div className="rounded-2xl border bg-white overflow-hidden">
+            <div className="relative rounded-2xl border bg-white overflow-hidden">
                 <div ref={mapRef} className="h-105 w-full" />
 
-                <div className="flex items-center gap-4 py-2 px-3.5 bg-lightColor border mt-2 rounded-full flex-wrap absolute">
+                <div className="flex items-center gap-4 py-2 px-3.5 bg-lightColor border rounded-full flex-wrap absolute bottom-4 left-4">
                     {legend.map((item) => (
                         <div
                             key={item.label}
                             className="flex items-center gap-2 text-sm text-muted-foreground"
                         >
                             <span
-                                className="w-2.5 h-2.5 rounded-full shrink-0"
+                                className="w-2.5 h-2.5 rounded-full"
                                 style={{ backgroundColor: item.color }}
                             />
                             {item.label}

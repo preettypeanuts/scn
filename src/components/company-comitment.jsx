@@ -38,7 +38,7 @@ export const CommitmentSection = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-start">
 
                 {/* LEFT SIDE */}
-                <div className="sticky top-24 p-10 bg-thirdColor/30 rounded-main backdrop-blur-sm border border-neutral-200/20 h-full flex flex-col justify-between">
+                <div className="p-10 bg-thirdColor/30 rounded-main backdrop-blur-lg border border-neutral-200/20 h-full flex flex-col justify-between">
                     <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-mainColor ">
                         Komitmen Perusahaan
                     </h2>
