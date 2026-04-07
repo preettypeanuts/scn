@@ -1,5 +1,6 @@
 import { AboutUsSection } from "@/components/about-us";
 import { ReusableBanner } from "@/components/reusable-banner";
+import { VissionMissionSection } from "@/components/vision-mission";
 
 export default function TentangKami() {
     return (
@@ -10,6 +11,7 @@ export default function TentangKami() {
                 description="Kenali lebih jauh tentang PT Semesta Cendikia Nusantara, perusahaan yang berdedikasi dalam menyediakan benih tebu berkualitas tinggi untuk mendukung pertumbuhan industri tebu nasional. "
             />
             <AboutUsSection />
+            <VissionMissionSection />
         </>
     )
 }
