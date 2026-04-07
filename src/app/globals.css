@@ -4,6 +4,70 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.bg-root {
+  @apply bg-white dark:bg-black;
+}
+body {
+  @apply bg-white dark:bg-black text-neutral-700 dark:text-neutral-200;
+}
+
+@theme {
+  /* Color */
+  --color-mainColor: #2D4D32;
+  --color-secondaryColor: #D47B0E;
+  --color-thirdColor: #FFF5E9;
+  --color-otherColor: #ffc785;
+  --color-otherColorDark: #a05c0e;
+
+  --color-darkColor: #191919;
+  --color-secondaryDark: #252525;
+
+  --color-lightColor: #f1f1f1;
+  --color-secondaryLight: #e3e3e3;
+
+  /* Border Radius */
+  --radius-main: 30px;
+  --radius-secondary: 25px;
+  --radius-third: 17px;
+
+  /* Blur */
+  --backdrop-blur-min: 2px;
+
+  /* BoxShadow */
+  --shadow-custom:
+    rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  --shadow-mainShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --shadow-secondaryShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --shadow-white:
+    rgba(255, 255, 255, 0.662) 0px 4px 16px,
+    rgba(255, 255, 255, 0.616) 0px 8px 32px;
+  --shadow-black:
+    rgba(0, 0, 0, 0.258) 0px 4px 16px, rgba(0, 0, 0, 0.268) 0px 8px 32px;
+}
+
+@utility margin {
+  @apply mx-4 md:mx-20;
+}
+
+@utility left-margin {
+  @apply ml-4 md:ml-20;
+}
+
+@utility right-margin {
+  @apply mr-4 md:mr-20;
+}
+
+@utility left-padding {
+  @apply pl-4 md:pl-20;
+}
+@utility right-padding {
+  @apply pr-4 md:pr-20;
+}
+
+@utility spacing {
+  @apply py-10 md:py-20;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
