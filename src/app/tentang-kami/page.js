@@ -1,4 +1,5 @@
 import { AboutUsSection } from "@/components/about-us";
+import { HumanResourcesCard } from "@/components/hr";
 import { ReusableBanner } from "@/components/reusable-banner";
 import { VissionMissionSection } from "@/components/vision-mission";
 
@@ -12,6 +13,7 @@ export default function TentangKami() {
             />
             <AboutUsSection />
             <VissionMissionSection />
+            <HumanResourcesCard />
         </>
     )
 }
