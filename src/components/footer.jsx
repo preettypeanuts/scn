@@ -4,6 +4,8 @@ import {
     Phone,
 } from "lucide-react";
 import { Button } from "./ui/button";
+import { contactInfo } from "@/app/data";
+import Link from "next/link";
 
 export const Footer = () => {
     return (
@@ -29,24 +31,24 @@ export const Footer = () => {
                         <h4 className="font-semibold mb-3">Navigasi</h4>
                         <ul className="space-y-2 text-sm text-black/70">
                             <li>
-                                <a href="/" className="hover:text-black transition">
+                                <Link href="/" className="hover:text-black transition">
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/about" className="hover:text-black transition">
+                                <Link href="/about" className="hover:text-black transition">
                                     About
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/products" className="hover:text-black transition">
+                                <Link href="/products" className="hover:text-black transition">
                                     Product & Services
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/contact" className="hover:text-black transition">
+                                <Link href="/contact" className="hover:text-black transition">
                                     Contact
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -56,26 +58,16 @@ export const Footer = () => {
                         <h4 className="font-semibold mb-3">Kontak</h4>
 
                         <div className="space-y-3 text-sm text-black/70">
-                            <a
-                                href=""
-                                className="flex items-start gap-2">
-                                <MapPin className="w-4 h-4 mt-0.5" />
-                                <span>(isi alamat lengkap)</span>
-                            </a>
-
-                            <a
-                                href="mailto:(isi email)"
-                                className="flex items-center gap-2">
-                                <Mail className="w-4 h-4" />
-                                <span>(isi email)</span>
-                            </a>
-
-                            <a
-                                href="tel:(isi nomor)"
-                                className="flex items-center gap-2">
-                                <Phone className="w-4 h-4" />
-                                <span>(isi nomor)</span>
-                            </a>
+                            {contactInfo.map((item, index) => (
+                                <Link
+                                    key={index}
+                                    href={item.href}
+                                    className="flex items-start gap-2"
+                                >
+                                    <item.icon className="w-4 h-4 min-w-4 min-h-4 mt-0.5" />
+                                    <span>{item.value}</span>
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -86,7 +78,7 @@ export const Footer = () => {
                         Butuh penawaran atau konsultasi proyek?
                     </p>
 
-                    <a
+                    <Link
                         href="https://wa.me/6285117388880"
                         target="_blank"
                         className=""
@@ -94,7 +86,7 @@ export const Footer = () => {
                         <Button>
                             Hubungi Kami
                         </Button>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* BOTTOM */}

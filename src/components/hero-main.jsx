@@ -29,7 +29,7 @@ export const HeroMain = () => {
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
 
                     {/* Headline */}
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl leading-tight md:leading-20 font-semibold text-white max-w-xl">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl leading-tight md:leading-20 font-semibold text-white max-w-xl md:max-w-none">
                         <span className="opacity-60">Penyedia </span>
                         <span className="opacity-100">Benih Tebu </span>
                         <br />

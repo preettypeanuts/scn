@@ -51,7 +51,7 @@ export const HightlightPoints = () => {
             {/* Mobile: vertical stack | Desktop: horizontal scroll */}
             <div className="
                 flex flex-col gap-4
-                md:flex-row md:overflow-x-auto md:gap-5
+                md:flex-row md:gap-5
                 md:[&::-webkit-scrollbar]:hidden md:[-ms-overflow-style:none] md:[scrollbar-width:none]
             ">
                 {highlights.map((item, index) => (
@@ -59,7 +59,7 @@ export const HightlightPoints = () => {
                         key={index}
                         className={`
                             rounded-main p-5 flex flex-col justify-between relative overflow-hidden
-                            h-64 md:min-w-72 md:w-72 md:h-90 md:shrink-0
+                            h-64 md:h-90 
                             ${item.useImg ? "bg-linear-to-t from-darkColor/70 text-white!" : "bg-thirdColor"}
                         `}
                     >

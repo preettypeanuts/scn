@@ -6,6 +6,8 @@ import {
     MessageCircle,
 } from "lucide-react";
 import { Button } from "./ui/button";
+import { contactInfo } from "@/app/data";
+import Link from "next/link";
 
 export const ContactSection = () => {
     const phone = "6285117388880";
@@ -89,17 +91,17 @@ export const ContactSection = () => {
                         {/* CARD 2 */}
                         <div className="bg-white/10 backdrop-blur-xs border border-white/20 rounded-2xl p-5 md:p-6 space-y-4">
                             <h3 className="font-semibold text-lg">Informasi Kontak</h3>
-                            <div className="flex items-start gap-3 text-sm">
-                                <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
-                                <span>(isi alamat lengkap)</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-sm">
-                                <Mail className="w-5 h-5 shrink-0" />
-                                <span>(isi email)</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-sm">
-                                <Phone className="w-5 h-5 shrink-0" />
-                                <span>(isi nomor)</span>
+                            <div className="space-y-3 text-sm text-white">
+                                {contactInfo.map((item, index) => (
+                                    <Link
+                                        key={index}
+                                        href={item.href}
+                                        className="flex items-start gap-2"
+                                    >
+                                        <item.icon className="w-4 h-4 min-w-4 min-h-4 mt-0.5" />
+                                        <span>{item.value}</span>
+                                    </Link>
+                                ))}
                             </div>
                         </div>
 

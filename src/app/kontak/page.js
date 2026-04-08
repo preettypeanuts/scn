@@ -1,5 +1,6 @@
 import { ContactSection } from "@/components/contact-section";
 import { FAQSection } from "@/components/faq";
+import { Maps } from "@/components/maps";
 import { ReusableBanner } from "@/components/reusable-banner";
 
 
@@ -12,6 +13,7 @@ export default function KontakPage() {
                 description="Hubungi kami untuk informasi lebih lanjut atau konsultasi proyek."
             />
             <ContactSection />
+            <Maps />
             <FAQSection />
         </>
     )
