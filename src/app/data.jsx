@@ -27,8 +27,8 @@ export const contactInfo = [
         type: "whatsapp",
         icon: MessageCircle,
         label: "WhatsApp",
-        value: "081121203090",
-        href: "https://wa.me/081121203090",
+        value: "+62 811 2120 3090",
+        href: "https://wa.me/6281121203090",
     },
 
 ];
