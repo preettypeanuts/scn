@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "PT Semesta Cendekia Nusantara",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Benih Tebu Berkualitas Nasional",
@@ -42,7 +42,7 @@ export const metadata = {
     title: "Supplier Benih Tebu Berkualitas",
     description:
       "Solusi benih tebu untuk proyek skala besar di Indonesia.",
-    images: ["/images/og-image.jpg"],
+    images: ["/og-image.webp"],
   },
 
   robots: {

@@ -1,8 +1,3 @@
-import {
-    MapPin,
-    Mail,
-    Phone,
-} from "lucide-react";
 import { Button } from "./ui/button";
 import { contactInfo } from "@/app/data";
 import Link from "next/link";

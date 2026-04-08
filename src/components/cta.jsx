@@ -25,7 +25,7 @@ export const CTASection = () => {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         {/* CTA Button */}
                         <a
-                            href="https://wa.me/081121203090"
+                            href="https://wa.me/6281121203090"
                             target="_blank"
                             className=""
                         >
