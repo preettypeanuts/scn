@@ -30,11 +30,11 @@ export const HeroMain = () => {
 
                     {/* Headline */}
                     <h1 className="text-4xl sm:text-5xl md:text-7xl leading-tight md:leading-20 font-semibold text-white max-w-xl md:max-w-none">
-                        <span className="opacity-60">Penyedia </span>
+                        <span className="opacity-70">Penyedia </span>
                         <span className="opacity-100">Benih Tebu </span>
                         <br />
                         <span className="opacity-100">Berkualitas </span>
-                        <span className="opacity-60">Nasional</span>
+                        <span className="opacity-70">Nasional</span>
                     </h1>
 
                     {/* Card */}

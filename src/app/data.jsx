@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 
 export const contactInfo = [
     {
@@ -23,4 +23,12 @@ export const contactInfo = [
         value: "semestacendekianusantara@gmail.com",
         href: "mailto:semestacendekianusantara@gmail.com",
     },
+    {
+        type: "whatsapp",
+        icon: MessageCircle,
+        label: "WhatsApp",
+        value: "081121203090",
+        href: "https://wa.me/081121203090",
+    },
+
 ];

@@ -2,6 +2,8 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Home, Package, Info, Phone } from "lucide-react"
+import { ScrollToTop } from "./scroll-to-top"
+import { FloatingButtonWhatsapp } from "./floating-button-whatsapp"
 
 const navItems = [
     { href: "/", labelMobile: "Home", label: "Home", icon: Home },
@@ -43,12 +45,14 @@ export const Navbar = () => {
     return (
         <>
             {/* Desktop Navbar */}
-            <nav className="hidden md:block fixed top-8 z-999 left-1/2 -translate-x-1/2">
+            <nav className="hidden fixed top-8 z-999 left-1/2 -translate-x-1/2 md:flex items-center gap-2">
                 <div className="flex items-center gap-1 p-1 bg-black/40 rounded-full border border-neutral-200/20 backdrop-blur-xs">
                     {navItems.map(({ href, label }) => (
                         <NavLink key={href} href={href}>{label}</NavLink>
                     ))}
                 </div>
+                <FloatingButtonWhatsapp />
+                <ScrollToTop />
             </nav>
 
             {/* Mobile Bottom Navbar */}
