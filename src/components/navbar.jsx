@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation"
 import { Home, Package, Info, Phone } from "lucide-react"
 import { ScrollToTop } from "./scroll-to-top"
 import { FloatingButtonWhatsapp } from "./floating-button-whatsapp"
+import Image from "next/image"
 
 const navItems = [
     { href: "/", labelMobile: "Home", label: "Home", icon: Home },
@@ -46,6 +47,14 @@ export const Navbar = () => {
         <>
             {/* Desktop Navbar */}
             <nav className="hidden fixed top-8 z-999 left-1/2 -translate-x-1/2 md:flex items-center gap-2">
+                <div className="bg-white/80 border border-neutral-500/20 backdrop-brightness-150 backdrop-blur-xl rounded-full px-3">
+                    <Image src="/icon.webp"
+                        alt="Logo PT Semesta Cendekia Nusantara"
+                        width={40}
+                        height={40}
+                        className="brightness-110"
+                    />
+                </div>
                 <div className="flex items-center gap-1 p-1 bg-black/40 rounded-full border border-neutral-200/20 backdrop-blur-xs">
                     {navItems.map(({ href, label }) => (
                         <NavLink key={href} href={href}>{label}</NavLink>

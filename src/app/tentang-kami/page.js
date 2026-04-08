@@ -4,6 +4,54 @@ import { HumanResourcesCard } from "@/components/hr";
 import { ReusableBanner } from "@/components/reusable-banner";
 import { VissionMissionSection } from "@/components/vision-mission";
 
+export const metadata = {
+    title:
+        "Tentang Kami | PT Semesta Cendekia Nusantara - Supplier Benih Tebu Nasional",
+    description:
+        "Kenali PT Semesta Cendekia Nusantara, perusahaan penyedia benih tebu berkualitas yang berfokus pada pengadaan skala besar, distribusi nasional, dan dukungan industri perkebunan di Indonesia.",
+
+    keywords: [
+        "tentang PT Semesta Cendekia Nusantara",
+        "perusahaan benih tebu Indonesia",
+        "supplier benih tebu nasional",
+        "profil perusahaan benih tebu",
+        "penyedia benih tebu berkualitas",
+        "distribusi benih tebu Indonesia",
+    ],
+
+    openGraph: {
+        title:
+            "Tentang PT Semesta Cendekia Nusantara",
+        description:
+            "Perusahaan penyedia benih tebu berkualitas untuk mendukung industri perkebunan nasional.",
+        url: "https://scn.id/tentang-kami",
+        siteName: "PT Semesta Cendekia Nusantara",
+        images: [
+            {
+                url: "https://scn.id/images/og-about.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Tentang PT Semesta Cendekia Nusantara",
+            },
+        ],
+        locale: "id_ID",
+        type: "website",
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Tentang PT Semesta Cendekia Nusantara",
+        description:
+            "Profil perusahaan penyedia benih tebu berkualitas di Indonesia.",
+        images: ["https://scn.id/images/og-about.jpg"],
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
+
 export default function TentangKami() {
     return (
         <>

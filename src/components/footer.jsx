@@ -6,6 +6,7 @@ import {
 import { Button } from "./ui/button";
 import { contactInfo } from "@/app/data";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Footer = () => {
     return (
@@ -17,6 +18,13 @@ export const Footer = () => {
 
                     {/* BRAND */}
                     <div>
+                        <Image
+                            src="/icon.webp"
+                            alt="Logo PT Semesta Cendekia Nusantara"
+                            width={140}
+                            height={40}
+                            className="brightness-110 -ml-2"
+                        />
                         <h3 className="text-lg font-semibold mb-3">
                             PT Semesta Cendekia Nusantara
                         </h3>
