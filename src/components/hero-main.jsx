@@ -8,7 +8,7 @@ export const HeroMain = () => {
             className="overflow-hidden relative m-3 rounded-main">
             <Image
                 fill
-                src="https://images.unsplash.com/photo-1655130944329-b3a63166f6b5?q=80&w=2233&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.pexels.com/photos/11466855/pexels-photo-11466855.jpeg"
                 alt="Hero Banner Image"
                 className="object-cover"
             />

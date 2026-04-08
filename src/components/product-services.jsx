@@ -27,15 +27,15 @@ export const offerings = [
         ],
         gallery: [
             {
-                src: "https://images.unsplash.com/photo-1558623252-d5609be26ef1?q=80&w=800&auto=format&fit=crop",
+                src: "https://images.unsplash.com/photo-1567161468559-1ed838dd56ee?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 caption: "Mata Tunas Segar",
             },
             {
-                src: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800&auto=format&fit=crop",
+                src: "https://images.unsplash.com/photo-1573605954553-a39394846cfc?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 caption: "Kebun Sumber",
             },
             {
-                src: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=800&auto=format&fit=crop",
+                src: "https://images.unsplash.com/photo-1729263268769-96f0fef0f46d?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 caption: "Seleksi Kualitas",
             },
         ],
